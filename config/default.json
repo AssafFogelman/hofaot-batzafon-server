@@ -1,3 +1,4 @@
 {
-  "jwtKey": "YourPrivateKeyVer3"
+  "jwtKey": "YourPrivateKeyVer3",
+  "twilioKey": "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"
 }

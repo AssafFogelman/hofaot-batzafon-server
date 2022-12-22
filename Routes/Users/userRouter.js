@@ -10,6 +10,10 @@ const router = require("express").Router();
 const User = require("./userModel");
 const auth = require("../../middlewares/authorization");
 const chalk = require("chalk");
+const {
+  forgotPasswordController,
+  checkResetPasswordController,
+} = require("./userControllers");
 
 router.post("/register", async (req, res) => {
   const { error } = validateRegistration(req.body);
@@ -74,5 +78,9 @@ router.get("/userInfo", auth, (req, res) => {
     .then((user) => res.send(user))
     .catch((errorsFromMongoose) => res.status(500).send(errorsFromMongoose));
 });
+
+router.post("/forgotpassword", forgotPasswordController);
+
+router.get("/resetpassword/:token", checkResetPasswordController);
 
 module.exports = router;

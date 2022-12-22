@@ -29,7 +29,7 @@ you can run:
 - The page will reload if you make edits
 - The print at the terminal will be purple with the message:
 
-`server run on: http://:localhost : 8181`
+`server run on: http://:localhost : 8182`
 
 And if there are no login errors you should see the message painted in purple:
 

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const chalk = require("chalk");
 
 mongoose
-  .connect("mongodb://localhost/shows-project", {
+  .connect("mongodb://127.0.0.1:27017/shows-project", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

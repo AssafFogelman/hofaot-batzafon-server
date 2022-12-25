@@ -8,4 +8,6 @@ function comparePassword(password, anotherPassword) {
   return bcrypt.compareSync(password, anotherPassword);
 }
 
-module.exports = { generateHashPassword, comparePassword };
+const compareHash = (password, hash) => bcrypt.compare(password, hash);
+
+module.exports = { generateHashPassword, comparePassword, compareHash };

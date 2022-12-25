@@ -1,4 +1,4 @@
-const validateRegistration = require("./usersValidations/registraion");
+const validateRegistration = require("./usersValidations/registration");
 const validateSignin = require("./usersValidations/signIn");
 const {
   comparePassword,
@@ -13,7 +13,11 @@ const chalk = require("chalk");
 const {
   forgotPasswordController,
   checkResetPasswordController,
+  updatePasswordController,
 } = require("./userControllers");
+const {
+  validateTokenInParams,
+} = require("../../middlewares/checkTokenInParams.middleware");
 
 router.post("/register", async (req, res) => {
   const { error } = validateRegistration(req.body);
@@ -79,8 +83,18 @@ router.get("/userInfo", auth, (req, res) => {
     .catch((errorsFromMongoose) => res.status(500).send(errorsFromMongoose));
 });
 
+//receives the user's email, checks if it is valid. creates a token, and sends it to the user's email address.
 router.post("/forgotpassword", forgotPasswordController);
 
+//check the validation of the token
 router.get("/resetpassword/:token", checkResetPasswordController);
+
+//validateTokenInParams - check the validation of the token
+//updatePasswordController - update password
+router.post(
+  "/resetpassword/:token",
+  validateTokenInParams,
+  updatePasswordController
+);
 
 module.exports = router;

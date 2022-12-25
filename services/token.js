@@ -4,7 +4,7 @@ const config = require("config");
 function generateAuthToken(user) {
   const token = jwt.sign(
     { _id: user._id, biz: user.biz, isAdmin: user.isAdmin },
-    config.get("jwtKey")
+    process.env.JWTKEY
   );
   return token;
 }
@@ -13,7 +13,7 @@ const generateAuthToken2 = (payload, expDate = "30d") => {
   return new Promise((resolve, reject) => {
     jwt.sign(
       payload,
-      config.get("jwtKey"),
+      process.env.JWTKEY,
       { expiresIn: expDate },
       (err, token) => {
         if (err) reject(err);
@@ -28,7 +28,7 @@ const generateAuthToken2 = (payload, expDate = "30d") => {
 
 function verifyToken(tokenFromUSer) {
   try {
-    const userData = jwt.verify(tokenFromUSer, config.get("jwtKey"));
+    const userData = jwt.verify(tokenFromUSer, process.env.JWTKEY);
 
     return userData;
   } catch (error) {
@@ -38,7 +38,7 @@ function verifyToken(tokenFromUSer) {
 
 const verifyToken2 = (token) => {
   return new Promise((resolve, reject) => {
-    jwt.verify(token, config.get("jwtKey"), (err, payload) => {
+    jwt.verify(token, process.env.JWTKEY, (err, payload) => {
       if (err) reject(err);
       else resolve(payload);
     });

@@ -20,7 +20,7 @@ const {
   compareHash,
 } = require("../../services/bcrypt");
 const chalk = require("chalk");
-sgMail.setApiKey(config.get("twilioKey"));
+sgMail.setApiKey(process.env.TWILIOKEY);
 
 const forgotPasswordController = async (req, res) => {
   try {

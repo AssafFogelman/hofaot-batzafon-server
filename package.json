@@ -4,8 +4,8 @@
   "description": "Business card app for businesses",
   "main": "app.js",
   "scripts": {
-    "start": "node .",
-    "dev": "nodemon ."
+    "start": "set NODE_ENV=production&& node .",
+    "dev": "set NODE_ENV=development&& nodemon ."
   },
   "keywords": [
     "Business card",
@@ -19,6 +19,7 @@
     "chalk": "^4.1.1",
     "config": "^3.3.6",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.17.2",
     "joi": "^17.5.0",
     "jsonwebtoken": "^8.5.1",

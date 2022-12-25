@@ -11,14 +11,12 @@ const chalk = require("chalk");
 //     console.log(chalk.redBright.bold(`could not connect to mongoDb: ${error}`))
 //   );
 
+console.log(chalk.redBright("process.env.DBADDRESS", process.env.DBADDRESS));
 mongoose
-  .connect(
-    "mongodb+srv://deepkfiz:deepkfiz7121@cluster0.mqwwdma.mongodb.net/hofaotBatzafon?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(`${process.env.DBADDRESS}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log(chalk.magentaBright.bold("connected to MongoDb!")))
   .catch((error) =>
     console.log(chalk.redBright.bold(`could not connect to mongoDb: ${error}`))

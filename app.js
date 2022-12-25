@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 require("./DB/connectToDb");
 // require("./primeryData/primeryCards")();
 const express = require("express");
@@ -25,7 +28,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-const PORT = 8182;
+const PORT = process.env.PORT;
 app.listen(PORT, () =>
   console.log(chalk.blueBright.bold(`server run on: http://:localhost:${PORT}`))
 );

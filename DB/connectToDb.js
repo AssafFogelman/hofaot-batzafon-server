@@ -11,7 +11,6 @@ const chalk = require("chalk");
 //     console.log(chalk.redBright.bold(`could not connect to mongoDb: ${error}`))
 //   );
 
-console.log(chalk.redBright("process.env.DBADDRESS", process.env.DBADDRESS));
 mongoose
   .connect(`${process.env.DBADDRESS}`, {
     useNewUrlParser: true,

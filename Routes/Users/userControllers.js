@@ -12,7 +12,6 @@ const {
   generateAuthToken2,
 } = require("../../services/token");
 
-const config = require("config");
 const sgMail = require("@sendgrid/mail");
 const {
   comparePassword,

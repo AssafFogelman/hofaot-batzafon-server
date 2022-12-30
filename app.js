@@ -11,7 +11,7 @@ const cardsRouter = require("./Routes/Cards/cardsRouter");
 const chalk = require("chalk");
 const morgan = require("morgan");
 const cors = require("cors");
-const path = require("node:path");
+const path = require("path");
 const helmet = require("helmet");
 
 app.use(morgan(chalk.cyan(":method :url :status :response-time ms")));

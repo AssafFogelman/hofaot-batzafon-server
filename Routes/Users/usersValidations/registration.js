@@ -1,4 +1,4 @@
-const Joi = require("Joi");
+const Joi = require("joi");
 
 function validateRegistration(user) {
   const schema = Joi.object({

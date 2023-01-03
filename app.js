@@ -4,6 +4,7 @@ require("dotenv").config({
 require("./DB/connectToDb");
 // require("./primeryData/primeryCards")();
 const express = require("express");
+const path = require("path");
 const app = express();
 
 const usersRouter = require("./Routes/Users/userRouter");
@@ -11,7 +12,6 @@ const cardsRouter = require("./Routes/Cards/cardsRouter");
 const chalk = require("chalk");
 const morgan = require("morgan");
 const cors = require("cors");
-const path = require("path");
 const helmet = require("helmet");
 
 app.use(morgan(chalk.cyan(":method :url :status :response-time ms")));

@@ -10,6 +10,7 @@ const chalk = require("chalk");
 //   .catch((error) =>
 //     console.log(chalk.redBright.bold(`could not connect to mongoDb: ${error}`))
 //   );
+mongoose.set("strictQuery", false);
 
 mongoose
   .connect(`${process.env.DBADDRESS}`, {

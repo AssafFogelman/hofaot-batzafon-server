@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+# /build
+#why the hell did it not upload the build directory?!!! now I changed it
 
 # misc
 .DS_Store

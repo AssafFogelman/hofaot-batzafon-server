@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b312360c.css",
+    "main.js": "/static/js/main.e7b827bc.js",
+    "static/js/787.cd8fde74.chunk.js": "/static/js/787.cd8fde74.chunk.js",
+    "static/media/waze.svg": "/static/media/waze.50c7de6c33167b23ebaa73bd528115dc.svg",
+    "index.html": "/index.html",
+    "main.b312360c.css.map": "/static/css/main.b312360c.css.map",
+    "main.e7b827bc.js.map": "/static/js/main.e7b827bc.js.map",
+    "787.cd8fde74.chunk.js.map": "/static/js/787.cd8fde74.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b312360c.css",
+    "static/js/main.e7b827bc.js"
+  ]
+}
